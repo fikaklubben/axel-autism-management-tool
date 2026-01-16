@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek Image Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Login View -->
+        <main id="login-view" class="view active">
+            <div class="login-container">
+                <h1>Axel autism managment tool</h1>
+                <p>Please enter password to continue</p>
+                <div class="login-form">
+                    <input type="password" id="password-input" placeholder="Enter password">
+                    <button id="login-btn">Enter</button>
+                    <p id="login-error" class="error-msg"></p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Main Gallery View -->
+        <main id="gallery-view" class="view">
+            <header>
+                <h1>Axel autism managment tool</h1>
+                <p>please select the correct color gradient</p>
+                <button id="logout-btn" class="text-btn logout-pos">Logout</button>
+            </header>
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Thumbnails injected here -->
+            </div>
+        </main>
+
+        <!-- Editor View -->
+        <main id="editor-view" class="view">
+            <header class="editor-header">
+                <button id="back-btn" class="icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6" />
+                    </svg>
+                    Back
+                </button>
+                <div class="actions">
+                    <button id="reset-btn" class="text-btn">Reset</button>
+                </div>
+            </header>
+
+            <div class="editor-workspace">
+                <div class="canvas-container">
+                    <canvas id="editor-canvas"></canvas>
+                </div>
+
+                <aside class="controls-panel">
+                    <h2>Adjustments</h2>
+
+                    <div class="control-group">
+                        <label for="hue-slider">Hue</label>
+                        <input type="range" id="hue-slider" min="-180" max="180" value="0">
+                        <span class="value-display" id="hue-val">0</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="contrast-slider">Contrast</label>
+                        <input type="range" id="contrast-slider" min="0" max="200" value="100">
+                        <span class="value-display" id="contrast-val">100%</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="exposure-slider">Exposure</label>
+                        <input type="range" id="exposure-slider" min="-100" max="100" value="0">
+                        <span class="value-display" id="exposure-val">0</span>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
